@@ -1,0 +1,27 @@
+Let's start with some terms:
+    actionCreator: fabric to create action cretors
+    ActionCreator: the instance of actionCreator
+
+This is how we crate very basic ActionCreator:
+
+The action which was created looks like this:
+
+action satisfies FSA standart. We can see that type is already defined,
+payload - undefined, error initially is set to false, 
+meta consists of creatorArgs array which is filled up by the arguments of actionCreator call
+
+Payload is set by the first argument of creator() call
+All arguments we can find in creatorArgs array
+
+If payload is the instance of Error, then ActionCreator automatically sets error property to true
+
+By default all instances of ActionCreator receive a unique type
+You can set type by passing it as actionCreator parameter (it should be string or symbol)
+
+You can manage creation of actions with enhancer functions. You can read about them later
+
+With the help of commandCreator you can create actions which execute sideeffects (async actions) only
+
+commandCreator is nothing but alias
+
+You can try borex plugin for babel. It automatically (?) and passes it as first argument to actionCreator
